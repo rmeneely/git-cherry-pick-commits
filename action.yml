@@ -1,7 +1,7 @@
 name: 'Git cherry-pick commits'
 author: Rick Meneely <rick@meneely.com>
 branding:
-  icon: filter
+  icon: git-commit
   color: purple
 description: Performs a git cherry-pick on a list of commitSHAs"
 inputs:
