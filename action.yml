@@ -46,7 +46,7 @@ runs:
         fi
         python ${{ github.action_path }}/git-cherry-pick-commits.py \
           --commits "${{ inputs.commits }}" \
-          --repo-path "${{ inputs.repo_path }}" \
+          --repo_path "${{ inputs.repo_path }}" \
           ${keep_redundant_commits} \
           ${no_execute}
       shell: bash
