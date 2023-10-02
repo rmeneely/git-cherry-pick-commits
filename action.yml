@@ -37,11 +37,11 @@ runs:
     - id: git-cherry-pick-commits
       run: |
         keep_redundant_commits=""
-        if [ "${{ inputs.keep_redundant_commits }}" == "true" ]; then
+        if [ "X${{ inputs.keep_redundant_commits }}" == "Xtrue" ]; then
           keep_redundant_commits="--keep-redundant-commits"
         fi
         no_execute=""
-        if [ "${{ inputs.no_execute }}" == "true" ]; then
+        if [ "X${{ inputs.no_execute }}" == "Xtrue" ]; then
           no_execute="--no-execute"
         fi
         python ${{ github.action_path }}/git-cherry-pick-commits.py \
