@@ -100,8 +100,9 @@ def main():
             commitSHA = get_commitSHA_for_tag(repo, tag_name)
         commit = repo.commit(commitSHA)
         options = ''
-        if keepRedundantCommits:
-            options += '--keep-redundant-commits'
+        # if keepRedundantCommits:
+        #     options += '--keep-redundant-commits --allow-empty'
+        options += '--keep-redundant-commits --allow-empty'
         try:
             if commit.parents and len(commit.parents) > 1:
                 command = "{}git cherry-pick {} -m 1 {}".format(preCommand, options, commitSHA)
