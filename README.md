@@ -18,7 +18,6 @@ All inputs are optional. If not set the default value will be used.
 | ---------------------- |:------------------------------------------- | :------------------------------------------- |
 | commits                | Space delimited list of commitSHAs  | (required) |
 | repo_path              | Path to git reporitory    | '.' |
-| keep_redundant_commits | See `git cherry-pick --keep-redundant-commits` | false |
 | no_execute | Print commands, but do not execute them | false |
 
 ## Examples

@@ -12,9 +12,6 @@ inputs:
     description: Path to the git repo
     required: false
     default: '.' # current directory
-  keep_redundant_commits:
-    description: git cherry-pick --keep-redundant-commits option
-    required: false
   no_execute:
     description: Do not execute the git cherry-pick command
     required: false
@@ -36,10 +33,6 @@ runs:
       shell: bash
     - id: git-cherry-pick-commits
       run: |
-        export keep_redundant_commits=""
-        if [ "X${{ inputs.keep_redundant_commits }}" == "Xtrue" ]; then
-          keep_redundant_commits="--keep-redundant-commits"
-        fi
         export no_execute=""
         if [ "X${{ inputs.no_execute }}" == "Xtrue" ]; then
           no_execute="--no-execute"
@@ -47,6 +40,5 @@ runs:
         python ${{ github.action_path }}/git-cherry-pick-commits.py \
           --commits "${{ inputs.commits }}" \
           --repo_path "${{ inputs.repo_path }}" \
-          ${keep_redundant_commits} \
           ${no_execute}
       shell: bash
